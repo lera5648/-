@@ -1,0 +1,4 @@
+with open("num4.txt") as file:
+    array = [row.strip() for row in file]
+array=list(map(int,array[0].split(",")))
+print(sum(abs(v - sorted(a)[len(a) // 2]) for v in array))
