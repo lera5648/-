@@ -1,0 +1,20 @@
+def js(j1, j2):
+    for i in j1:
+        for j in j2['values']:
+            if(i.get('id') == j.get('id')):
+                i['value'] = j.get('value')
+                break
+        if('values' in i.keys()):
+            js(i['values'], json2)
+    return j1
+            
+f1 = open('tests.json')
+f2 = open('values.json')
+# returns JSON object as 
+# a dictionary
+d1 = json.load(f1) 
+d2 = json.load(f2)
+print(fill_json(d1['tests'],d2))
+
+with open('report.json', 'w', encoding='utf-8') as f:
+    json.dump(fill_json(d1['tests'],d2), f, ensure_ascii=False, indent=4)
