@@ -29,6 +29,8 @@ def mas(n,m):
         
        
     return km
-            
-mas(3,2)      
-            
+
+s=input() 
+s=s.split(' ')
+s=list(map(int, s))
+mas(s[0],s[1])    
